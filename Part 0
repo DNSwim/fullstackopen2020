@@ -1,0 +1,53 @@
+//The excercises of Part 0
+
+
+
+- 0.4
+
+    - Browser->Server: /exampleapp/new-note, 302
+        Server->Browser: /exampleapp/notes
+        Server->Browser: html-code
+        Browser->Server: /exampleapp/main.css
+        Server->Browser: main.css
+        Browser->Server: /exampleapp/main.js
+        Server->Browser: main.js
+
+        Browser: executes JS-code, request data.json from server
+
+        Browser->Server: /exampleapp/data.json
+        Server->Browser: data.json
+
+        Browser: executes the event handler, parse json data and render(draw notes)
+
+- 0.5
+
+    - Browser->Server: /exampleapp/spa
+        Server->Browser: html-code
+        Browser->Server: /exampleapp/main.css
+        Server->Browser: main.css
+        Browser->Server: /exampleapp/spa.js
+        Server->Browser: spa.js
+
+        Browser: executes JS-code, request data.json from server
+
+        Browser->Server: /exampleapp/data.json
+        Server->Browser: data.json
+
+        Browser: window.onload(), executes the event handler(xhttp.onreadystatechange), parse json data and render(use redrawNotes function to draw notes)
+
+- 0.6
+
+    - Brower: form.onsubmit(), redrawNotes(), sentToServer()
+        Browser->Server: /exampleapp/new_note_spa, with setting request header and stringfied json-data note
+        Server->Browser: html-code
+        Browser->Server: /exampleapp/main.css
+        Server->Browser: main.css
+        Browser->Server: /exampleapp/spa.js
+        Server->Browser: spa.js
+
+        Browser: executes JS-code, request data.json from server
+
+        Browser->Server: /exampleapp/data.json
+        Server->Browser: data.json
+
+        Browser: executes the event handler(xhttp.onreadystatechange), parse json data and render(use redrawNotes function to draw notes)
